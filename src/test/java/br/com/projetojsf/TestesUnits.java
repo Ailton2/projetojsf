@@ -21,5 +21,18 @@ public class TestesUnits {
 		
 		daoGeneric.salvar(user);
 	}
+	
+	@Test
+	public void testConsultar() {
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		Usuario usuario = new Usuario();
+		usuario.setId(1L);
+		
+		usuario = daoGeneric.consultar(usuario);
+		
+		System.out.println(usuario);
+	}
+	
+	
 
 }
