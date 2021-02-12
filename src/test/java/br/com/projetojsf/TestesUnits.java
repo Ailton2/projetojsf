@@ -14,10 +14,10 @@ public class TestesUnits {
 		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
 		
 		Usuario user = new Usuario();
-		user.setNome("Ailton");
+		user.setNome("Paulo");
 		user.setSobrenome("Ferreira");
 		user.setLogin("tim");
-		user.setSenha("123");
+		user.setSenha("1234");
 		
 		daoGeneric.salvar(user);
 	}
@@ -33,6 +33,34 @@ public class TestesUnits {
 		System.out.println(usuario);
 	}
 	
+	@Test
+	public void testUpdate() {
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		
+		Usuario usuario = new Usuario();
+		usuario.setId(1L);
+		usuario = daoGeneric.consultar(usuario); //consulta
+		
+		usuario.setNome("testando"); //seta a atualizaçao
+		
+		usuario= daoGeneric.updateMerge(usuario); //atualiza
+		
+		
+		System.out.println(usuario);
+	}
 	
+	@Test
+	public void testDelete() {
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		
+		Usuario usuario = new Usuario();
+		usuario.setId(1L);
+		usuario = daoGeneric.consultar(usuario); //consulta
+		
+		
+		daoGeneric.deletar(usuario); //delete
+		
+
+	}
 
 }
