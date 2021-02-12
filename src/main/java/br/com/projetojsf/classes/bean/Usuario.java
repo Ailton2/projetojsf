@@ -1,9 +1,12 @@
 package br.com.projetojsf.classes.bean;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -18,6 +21,9 @@ public class Usuario {
 	private String sobrenome;
 	private String login;
 	private String senha;
+	
+	@OneToMany(mappedBy = "usuario" )
+	private List<Telefone> telefones;
 
 	public Long getId() {
 		return id;
