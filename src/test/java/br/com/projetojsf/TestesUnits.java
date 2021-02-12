@@ -2,13 +2,10 @@ package br.com.projetojsf;
 
 import java.util.List;
 
-import javax.persistence.EntityTransaction;
-
 import org.junit.Test;
 
 import br.com.projetojsf.classes.bean.Usuario;
 import br.com.projetojsf.dao.DaoGeneric;
-import br.com.projetojsf.util.HibernateUtil;
 
 public class TestesUnits {
 	
