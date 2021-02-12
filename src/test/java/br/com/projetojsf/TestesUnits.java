@@ -1,5 +1,9 @@
 package br.com.projetojsf;
 
+import java.util.List;
+
+import javax.persistence.EntityTransaction;
+
 import org.junit.Test;
 
 import br.com.projetojsf.classes.bean.Usuario;
@@ -62,5 +66,20 @@ public class TestesUnits {
 		
 
 	}
+	
+	@Test
+	public void testeListarTodos() {
+		
+		DaoGeneric<Usuario> daoGeneric = new DaoGeneric<Usuario>();
+		
+		List<Usuario> list = daoGeneric.listar(Usuario.class);
+		for (Usuario usuario : list) {
+			System.out.println(usuario);
+		}
+		
+		
+	}
+	
+
 
 }
